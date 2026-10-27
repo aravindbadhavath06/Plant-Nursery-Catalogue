@@ -1,0 +1,53 @@
+
+<div class="login-page">
+  <a routerLink="/" class="brand">🌿 Plant Nursery Catalogue</a>
+
+  <div class="login-card">
+    <div class="plant-icon">🌱</div>
+    <h1>Welcome Back!</h1>
+    <p class="subtitle">Login to explore your favourite plants.</p>
+
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <label for="email">Email Address</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        required
+        email
+        #emailField="ngModel"
+      />
+      <small class="error" *ngIf="emailField.invalid && emailField.touched">
+        Please enter a valid email.
+      </small>
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Enter your password"
+        required
+        minlength="6"
+        #passwordField="ngModel"
+      />
+      <small class="error" *ngIf="passwordField.invalid && passwordField.touched">
+        Password must contain at least 6 characters.
+      </small>
+
+      <button type="submit">Login</button>
+
+      <p class="message" *ngIf="message">{{ message }}</p>
+    </form>
+
+    <p class="register-text">
+      Don't have an account?
+      <a routerLink="/register">Create Account</a>
+    </p>
+
+    <a routerLink="/" class="back-link">← Back </a>
+  </div>
+</div>

@@ -1,0 +1,377 @@
+
+<header class="navbar">
+  <a routerLink="/home" class="brand">
+    🌿 Plant Nursery <strong>Catalogue</strong>
+  </a>
+
+  <nav class="nav-links">
+    <a routerLink="/home" class="active">Home</a>
+  
+
+  <div class="nav-actions">
+    <!-- Profile appears when a user is logged in -->
+    <div *ngIf="user" class="profile-menu">
+      <span class="profile-avatar" title="User profile">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="23"
+          height="23"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          role="img"
+          aria-label="Profile"
+        >
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M5 21v-2a7 7 0 0 1 14 0v2"></path>
+        </svg>
+      </span>
+
+      <div class="profile-details">
+        <strong>{{ user.name }}</strong>
+        <small>{{ user.email }}</small>
+      </div>
+
+      <button
+        type="button"
+        class="logout-button"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </div>
+
+    
+    <button
+      type="button"
+      class="cart-button"
+      (click)="toggleCart()"
+    >
+      🛒 Cart ({{ cartCount }})
+    </button>
+  </div>
+  </nav>
+</header>
+
+<main>
+  <section class="welcome-section">
+    <div class="welcome-copy">
+      <p class="eyebrow">✦ YOUR LITTLE GREEN CORNER</p>
+
+      <h1>
+        Welcome to your<br />
+        <em>green space.</em>
+      </h1>
+
+      <p class="welcome-description">
+        Discover beautiful plants for your home, balcony and garden.
+        Find your favourite green companion and make every corner feel alive.
+      </p>
+
+      <a class="primary-button" href="#plants">
+        Explore Our Plants →
+      </a>
+
+      <div class="welcome-note">
+        <span>🌿</span>
+        <div>
+          <strong>A little green goes a long way</strong>
+          <p>Choose a plant. Grow something beautiful.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome-image">
+      <div class="image-caption">
+        <span>🌱</span>
+        <div>
+          <strong>Grow something beautiful</strong>
+          <p>Your greener home starts here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="benefit">
+      <span>🌱</span>
+      <div>
+        <strong>Healthy Plants</strong>
+        <small>Carefully selected</small>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <span>🚚</span>
+      <div>
+        <strong>Easy Shopping</strong>
+        <small>Browse with ease</small>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <span>☀️</span>
+      <div>
+        <strong>Plant Care Tips</strong>
+        <small>Grow with confidence</small>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <span>💚</span>
+      <div>
+        <strong>Green Living</strong>
+        <small>Bring nature home</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalogue-section" id="plants">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">FIND YOUR GREEN FRIEND</p>
+        <h2>Explore Our Plants</h2>
+        <p class="section-description">
+          From easy-care indoor plants to colourful garden favourites.
+        </p>
+      </div>
+
+      <div class="search-box">
+        <span>⌕</span>
+        <input
+          type="search"
+          [(ngModel)]="searchText"
+          placeholder="Search plants..."
+          aria-label="Search plants"
+        />
+      </div>
+    </div>
+
+    <div class="category-list" id="categories">
+      <button
+        *ngFor="let category of categories"
+        [class.selected]="selectedCategory === category"
+        (click)="selectCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="result-count">
+      Showing {{ filteredPlants.length }} plant(s)
+    </div>
+
+    <div class="plant-grid" *ngIf="filteredPlants.length > 0">
+      <article class="plant-card" *ngFor="let plant of filteredPlants">
+        <div class="plant-image-wrap">
+          <img
+            [src]="plant.image"
+            [alt]="plant.imageAlt"
+            class="plant-image"
+            loading="lazy"
+          />
+
+          <span class="plant-badge" *ngIf="plant.bestseller">
+            Best Seller
+          </span>
+
+          <span class="category-badge">{{ plant.category }}</span>
+        </div>
+
+        <div class="plant-info">
+          <p class="plant-category">{{ plant.category }} Plant</p>
+          <h3>{{ plant.name }}</h3>
+          <p class="plant-description">{{ plant.description }}</p>
+
+          <div class="plant-card-bottom">
+            <strong class="plant-price">₹{{ plant.price }}</strong>
+
+            <button
+              type="button"
+              class="add-button"
+              (click)="addToCart(plant)"
+            >
+              + Add
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="empty-results" *ngIf="filteredPlants.length === 0">
+      <span>🪴</span>
+      <h3>No plants found</h3>
+      <p>Try another name or select a different category.</p>
+
+      <button
+        type="button"
+        class="secondary-button"
+        (click)="searchText = ''; selectCategory('All Plants')"
+      >
+        Show All Plants
+      </button>
+    </div>
+  </section>
+
+  <section class="care-section">
+    <div class="care-heading">
+      <p class="eyebrow">A LITTLE CARE GOES A LONG WAY</p>
+      <h2>Happy plants, happy home.</h2>
+      <p>Three simple tips to help your plants thrive.</p>
+    </div>
+
+    <div class="care-grid">
+      <article class="care-card">
+        <span>💧</span>
+        <h3>Water Wisely</h3>
+        <p>
+          Check the soil before watering. Different plants need different
+          amounts of water.
+        </p>
+      </article>
+
+      <article class="care-card">
+        <span>☀️</span>
+        <h3>Find the Light</h3>
+        <p>
+          Choose a spot with the amount of sunlight your plant prefers.
+        </p>
+      </article>
+
+      <article class="care-card">
+        <span>🌿</span>
+        <h3>Give It Space</h3>
+        <p>
+          Keep leaves clean and allow enough room for healthy growth.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <p class="eyebrow">GROW WITH US</p>
+    <h2>Bring nature into your everyday life.</h2>
+    <p>
+      Plant Nursery Catalogue helps you discover plants for your home,
+      balcony and garden. Browse the collection and find your next green friend.
+    </p>
+
+    <a class="primary-button" href="/home">
+      Find Your Plant →
+    </a>
+  </section>
+</main>
+
+<footer class="footer">
+  <a routerLink="/home" class="footer-brand">
+    🌿 Plant Nursery Catalogue
+  </a>
+
+  <p>Growing a greener tomorrow, one plant at a time.</p>
+  <small>© 2026 Plant Nursery Catalogue. All rights reserved.</small>
+</footer>
+
+<div class="cart-overlay" *ngIf="showCart" (click)="toggleCart()">
+  <aside
+    class="cart-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Shopping cart"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">YOUR GREEN PICKS</p>
+        <h2>Your Cart ({{ cartCount }})</h2>
+      </div>
+
+      <button
+        type="button"
+        class="close-cart"
+        (click)="toggleCart()"
+        aria-label="Close cart"
+      >
+        ✕
+      </button>
+    </div>
+
+    <div class="cart-empty" *ngIf="cartItems.length === 0">
+      <span>🛒</span>
+      <h3>Your cart is empty</h3>
+      <p>Find a plant to bring home.</p>
+
+      <button
+        type="button"
+        class="primary-button"
+        (click)="toggleCart()"
+      >
+        Explore Plants
+      </button>
+    </div>
+
+    <div class="cart-items" *ngIf="cartItems.length > 0">
+      <article class="cart-item" *ngFor="let item of cartItems">
+        <img [src]="item.plant.image" [alt]="item.plant.imageAlt" />
+
+        <div class="cart-item-info">
+          <h3>{{ item.plant.name }}</h3>
+          <p>₹{{ item.plant.price }} each</p>
+
+          <div class="quantity-control">
+            <button
+              type="button"
+              (click)="decreaseQuantity(item)"
+              aria-label="Decrease quantity"
+            >
+              −
+            </button>
+
+            <span>{{ item.quantity }}</span>
+
+            <button
+              type="button"
+              (click)="increaseQuantity(item)"
+              aria-label="Increase quantity"
+            >
+              +
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="remove-button"
+            (click)="removeFromCart(item)"
+          >
+            Remove
+          </button>
+        </div>
+
+        <strong class="item-subtotal">
+          ₹{{ item.plant.price * item.quantity }}
+        </strong>
+      </article>
+    </div>
+
+    <div class="cart-footer" *ngIf="cartItems.length > 0">
+      <div class="total-row">
+        <span>Total</span>
+        <strong>₹{{ cartTotal }}</strong>
+      </div>
+
+      <p class="cart-note">
+        Demo catalogue: checkout is not connected yet.
+      </p>
+
+      <button
+        type="button"
+        class="primary-button checkout-button"
+        (click)="toggleCart()"
+      >
+        Continue Shopping
+      </button>
+    </div>
+  </aside>
+</div>

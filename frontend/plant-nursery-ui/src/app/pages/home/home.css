@@ -1,0 +1,864 @@
+
+:host {
+  display: block;
+  color: #23432f;
+  background: #fcfaf5;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  min-height: 72px;
+  padding: 14px 3.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: #fcfaf5;
+  border-bottom: 1px solid #efeee6;
+}
+
+.brand,
+.footer-brand {
+  color: #245c38;
+  text-decoration: none;
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a,
+.login-link {
+  color: #62685f;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.login-link:hover {
+  color: #28643e;
+}
+
+.nav-links .active {
+  font-weight: bold;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.welcome-user {
+  color: #28643e;
+  font-weight: 600;
+}
+
+.login-link {
+  padding: 10px;
+}
+
+.logout-button {
+  padding: 10px 14px;
+  border: 1px solid #cbd9c9;
+  border-radius: 8px;
+  color: #28643e;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cart-button {
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 0 0 12px 12px;
+  background: #28603e;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cart-button:hover,
+.add-button:hover,
+.primary-button:hover {
+  background: #19492d;
+}
+
+.welcome-section {
+  min-height: 600px;
+  padding: 65px 3.5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.eyebrow {
+  color: #477d53;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.welcome-copy h1 {
+  margin: 28px 0;
+  color: #23432f;
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+}
+
+.welcome-copy h1 em {
+  color: #54895c;
+  font-weight: normal;
+}
+
+.welcome-description {
+  max-width: 520px;
+  color: #788078;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 21px;
+  border: 0;
+  border-radius: 9px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #28603e;
+  color: white;
+}
+
+.secondary-button {
+  border: 1px solid #d4ddcd;
+  background: transparent;
+  color: #28563a;
+}
+
+.welcome-copy > .primary-button {
+  margin-top: 22px;
+}
+
+.welcome-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.welcome-note > span {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e8efdf;
+  font-size: 23px;
+}
+
+.welcome-note p {
+  margin: 7px 0 0;
+  color: #82877f;
+  font-size: 13px;
+}
+
+.welcome-image {
+  position: relative;
+  min-height: 490px;
+  border-radius: 170px 170px 18px 18px;
+  background:
+    linear-gradient(180deg, transparent 55%, #001a0870),
+    url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85')
+    center / cover;
+}
+
+.image-caption {
+  position: absolute;
+  right: 4%;
+  bottom: 5%;
+  left: 4%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 19px;
+  border-radius: 12px;
+  background: #fffffff0;
+}
+
+.image-caption > span {
+  font-size: 29px;
+}
+
+.image-caption p {
+  margin: 7px 0 0;
+  color: #82877f;
+  font-size: 13px;
+}
+
+.benefits {
+  margin: 0 3.5% 75px;
+  padding: 28px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  border-radius: 15px;
+  background: #eef2e8;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.benefit > span {
+  font-size: 28px;
+}
+
+.benefit strong,
+.benefit small {
+  display: block;
+}
+
+.benefit small {
+  margin-top: 8px;
+  color: #7b8378;
+}
+
+.catalogue-section {
+  padding: 20px 3.5% 80px;
+  scroll-margin-top: 25px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.section-heading h2,
+.care-heading h2,
+.about-section h2 {
+  margin: 12px 0;
+  color: #23432f;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 45px);
+}
+
+.section-description {
+  color: #788078;
+  line-height: 1.7;
+}
+
+.search-box {
+  width: min(100%, 310px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #dce2d7;
+  border-radius: 10px;
+  background: white;
+}
+
+.search-box > span {
+  color: #477d53;
+  font-size: 25px;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0 18px;
+  scroll-margin-top: 20px;
+}
+
+.category-list button {
+  padding: 11px 19px;
+  border: 1px solid #d9e1d4;
+  border-radius: 24px;
+  background: white;
+  color: #526151;
+  cursor: pointer;
+}
+
+.category-list button.selected,
+.category-list button:hover {
+  border-color: #28603e;
+  background: #28603e;
+  color: white;
+}
+
+.result-count {
+  margin: 16px 0;
+  color: #858a80;
+  font-size: 13px;
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.plant-card {
+  overflow: hidden;
+  border: 1px solid #edf0e8;
+  border-radius: 15px;
+  background: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #243f2c12;
+}
+
+.plant-image-wrap {
+  position: relative;
+  height: 255px;
+  overflow: hidden;
+  background: #eef2e8;
+}
+
+.plant-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.plant-card:hover .plant-image {
+  transform: scale(1.04);
+}
+
+.plant-badge,
+.category-badge {
+  position: absolute;
+  top: 12px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+.plant-badge {
+  left: 12px;
+  background: #28603e;
+  color: white;
+}
+
+.category-badge {
+  right: 12px;
+  background: #ffffffed;
+  color: #28603e;
+}
+
+.plant-info {
+  padding: 20px;
+}
+
+.plant-category {
+  margin: 0;
+  color: #628369;
+  font-size: 12px;
+}
+
+.plant-info h3 {
+  margin: 8px 0;
+  color: #263e2c;
+  font-size: 20px;
+}
+
+.plant-description {
+  min-height: 44px;
+  color: #7b8179;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.plant-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 17px;
+}
+
+.plant-price {
+  color: #28603e;
+  font-size: 22px;
+}
+
+.add-button {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #28603e;
+  color: white;
+  cursor: pointer;
+}
+
+.empty-results {
+  padding: 55px 20px;
+  text-align: center;
+  border-radius: 15px;
+  background: #f1f4ec;
+}
+
+.empty-results > span {
+  font-size: 42px;
+}
+
+.empty-results p {
+  color: #788078;
+}
+
+.care-section {
+  padding: 65px 3.5%;
+  background: #f1f4ec;
+}
+
+.care-heading {
+  text-align: center;
+}
+
+.care-heading > p:last-child {
+  color: #788078;
+}
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.care-card {
+  padding: 28px;
+  border: 1px solid #e5eadd;
+  border-radius: 13px;
+  background: white;
+}
+
+.care-card > span {
+  font-size: 32px;
+}
+
+.care-card h3 {
+  color: #28603e;
+}
+
+.care-card p {
+  color: #788078;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-section {
+  max-width: 760px;
+  margin: auto;
+  padding: 75px 24px;
+  text-align: center;
+  scroll-margin-top: 20px;
+}
+
+.about-section > p:not(.eyebrow) {
+  color: #788078;
+  line-height: 1.9;
+}
+
+.about-section .primary-button {
+  margin-top: 15px;
+}
+
+.footer {
+  padding: 32px 20px;
+  background: #eaf0e4;
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer p {
+  color: #697969;
+}
+
+.footer small {
+  color: #82877f;
+}
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  background: #14221875;
+}
+
+.cart-panel {
+  width: min(100%, 470px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  overflow-y: auto;
+  background: #fffef9;
+  box-shadow: -10px 0 35px #00000015;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e7eadd;
+}
+
+.cart-header .eyebrow {
+  margin-bottom: 6px;
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+.close-cart {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #dce2d7;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.cart-empty {
+  margin: auto 0;
+  text-align: center;
+}
+
+.cart-empty > span {
+  font-size: 48px;
+}
+
+.cart-empty p {
+  margin-bottom: 22px;
+  color: #788078;
+}
+
+.cart-items {
+  flex: 1;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e7eadd;
+}
+
+.cart-item > img {
+  width: 82px;
+  height: 95px;
+  border-radius: 9px;
+  object-fit: cover;
+  background: #eef2e8;
+}
+
+.cart-item-info h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.cart-item-info p {
+  margin: 0 0 12px;
+  color: #788078;
+  font-size: 13px;
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #dce2d7;
+  border-radius: 7px;
+}
+
+.quantity-control button {
+  width: 29px;
+  height: 29px;
+  border: 0;
+  background: #f1f4ec;
+  cursor: pointer;
+}
+
+.remove-button {
+  display: block;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #a64a43;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cart-footer {
+  padding-top: 22px;
+  border-top: 1px solid #e7eadd;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.total-row strong {
+  color: #28603e;
+  font-size: 23px;
+}
+
+.cart-note {
+  color: #788078;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.checkout-button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media (max-width: 1000px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .welcome-section {
+    gap: 30px;
+  }
+
+  .plant-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 15px 5%;
+    gap: 15px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .welcome-user {
+    max-width: 100px;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+  }
+
+  .cart-button {
+    padding: 12px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .welcome-section {
+    grid-template-columns: 1fr;
+    padding: 42px 5%;
+  }
+
+  .welcome-copy h1 {
+    font-size: 49px;
+  }
+
+  .welcome-image {
+    min-height: 350px;
+    border-radius: 120px 120px 15px 15px;
+  }
+
+  .benefits {
+    margin: 0 5% 55px;
+    padding: 23px 12px;
+    gap: 22px 10px;
+  }
+
+  .benefit {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .benefit > span {
+    font-size: 22px;
+  }
+
+  .benefit strong {
+    font-size: 12px;
+  }
+
+  .benefit small {
+    font-size: 11px;
+  }
+
+  .catalogue-section {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .plant-grid {
+    gap: 13px;
+  }
+
+  .plant-image-wrap {
+    height: 180px;
+  }
+
+  .plant-info {
+    padding: 13px;
+  }
+
+  .plant-info h3 {
+    font-size: 17px;
+  }
+
+  .plant-description {
+    font-size: 12px;
+  }
+
+  .plant-price {
+    font-size: 18px;
+  }
+
+  .add-button {
+    padding: 10px 12px;
+  }
+
+  .care-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .plant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-image-wrap {
+    height: 230px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid #cbd9c9;
+  background: #e8efdf;
+  color: #28603e;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-details strong {
+  color: #28603e;
+  font-size: 13px;
+}
+
+.profile-details small {
+  color: #788078;
+  font-size: 11px;
+}
+
+@media (max-width: 650px) {
+  .profile-details {
+    display: none;
+  }
+}

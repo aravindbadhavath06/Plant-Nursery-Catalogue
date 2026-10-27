@@ -1,0 +1,112 @@
+
+.register-page {
+  min-height: 100vh;
+  padding: 28px 20px;
+  background: linear-gradient(135deg, #edf7ed, #f8f5e9);
+  font-family: Arial, sans-serif;
+}
+
+.brand {
+  color: #245c38;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 440px;
+  margin: 30px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px #244c3017;
+  box-sizing: border-box;
+}
+
+.plant-icon {
+  font-size: 38px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 8px;
+  text-align: center;
+  color: #245c38;
+}
+
+.subtitle {
+  margin-bottom: 22px;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d6ded6;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: 2px solid #77a982;
+  border-color: transparent;
+}
+
+button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #28643e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #194b2c;
+}
+
+.message {
+  text-align: center;
+  color: #28643e;
+  overflow-wrap: anywhere;
+}
+
+.login-text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.login-text a,
+.back-link {
+  color: #28643e;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.back-link {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 24px 18px;
+  }
+}

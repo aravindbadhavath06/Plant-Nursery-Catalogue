@@ -1,0 +1,275 @@
+
+:host {
+  display: block;
+  color: #23432f;
+  background: #fcfaf4;
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  min-height: 72px;
+  padding: 16px 3.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  color: #245c38;
+  text-decoration: none;
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar nav a,
+.login-link {
+  color: #555;
+  text-decoration: none;
+}
+
+.navbar nav a.active {
+  color: #28643e;
+  font-weight: bold;
+}
+
+.login-link {
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+.login-link:hover {
+  background: #eaf1e5;
+}
+
+.hero {
+  min-height: 650px;
+  padding: 65px 3.5% 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.eyebrow {
+  color: #477d53;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  margin: 28px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(48px, 5.2vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero h1 em {
+  color: #54895c;
+  font-weight: normal;
+}
+
+.description {
+  max-width: 520px;
+  color: #788078;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 17px 23px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.primary-button {
+  background: #28603e;
+  color: white;
+}
+
+.primary-button:hover {
+  background: #19492d;
+}
+
+.secondary-button {
+  color: #28563a;
+  border: 1px solid #d4ddcd;
+}
+
+.small-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 42px;
+}
+
+.leaf-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: #e8efdf;
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.small-note p,
+.image-overlay p {
+  margin: 7px 0 0;
+  color: #82877f;
+  font-size: 13px;
+}
+
+.hero-image {
+  position: relative;
+  min-height: 520px;
+  border-radius: 180px 180px 18px 18px;
+  background:
+    linear-gradient(180deg, transparent 50%, #001a0870),
+    url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85')
+    center / cover;
+}
+
+.image-overlay {
+  position: absolute;
+  right: 4%;
+  bottom: 5%;
+  left: 4%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 13px;
+  background: #fffffff0;
+  color: #243e2d;
+}
+
+.image-overlay > span {
+  font-size: 30px;
+}
+
+.benefits {
+  margin: 0 3.5% 65px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  border-radius: 15px;
+  background: #eef2e8;
+}
+
+.benefits > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.benefits > div > span {
+  font-size: 28px;
+}
+
+.benefits p {
+  margin: 0;
+}
+
+.benefits small {
+  display: block;
+  margin-top: 8px;
+  color: #7b8378;
+}
+
+.about {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 55px 24px 80px;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+}
+
+.about > p:not(.eyebrow) {
+  color: #788078;
+  line-height: 1.8;
+}
+
+.about .primary-button {
+  margin-top: 18px;
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+  color: #6d796d;
+  background: #eef2e8;
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    gap: 35px;
+  }
+
+  .hero-image {
+    min-height: 400px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-image {
+    min-height: 320px;
+    border-radius: 100px 100px 16px 16px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
